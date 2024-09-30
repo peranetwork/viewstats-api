@@ -2,6 +2,10 @@
 
 This PHP wrapper provides an easy-to-use interface for interacting with the ViewStats API. It handles authentication, request sending, and response processing, including decryption of encrypted responses.
 
+ViewStats is a platform for tracking and analyzing YouTube channel statistics. The API provides access to various data points, including channel information, video statistics, and more.
+
+Address: [ViewStats](https://viewstats.com)
+
 ## Features
 
 - Simple interface for making GET and POST requests to the ViewStats API
