@@ -1,0 +1,23 @@
+{
+    "name": "peranetwork/viewstats-unofficial-api",
+    "description": "A PHP wrapper for the ViewStats API",
+    "type": "library",
+    "require": {
+        "php": ">=7.4",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-openssl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ViewStatsWrapper\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pera NETWORK",
+            "email": "support@peranetwork.com"
+        }
+    ]
+}

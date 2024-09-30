@@ -31,7 +31,7 @@ composer require peranetwork/viewstats-api
 ```php
 use ViewStatsWrapper\ViewStatsAPI;
 
-$apiToken = 'your_api_token_here';
+$apiToken = '32ev9m0qggn227ng1rgpbv5j8qllas8uleujji3499g9had6oj7f0ltnvrgi00cq';
 $api = new ViewStatsAPI($apiToken);
 
 try {
