@@ -33,6 +33,8 @@ composer require peranetwork/viewstats-api
 ### Basic usage
 
 ```php
+require 'vendor/autoload.php';
+
 use ViewStatsWrapper\ViewStatsAPI;
 
 $apiToken = '32ev9m0qggn227ng1rgpbv5j8qllas8uleujji3499g9had6oj7f0ltnvrgi00cq';
@@ -61,6 +63,128 @@ $response = $api->get('/endpoint', $params);
 $data = ['key1' => 'value1', 'key2' => 'value2'];
 $response = $api->post('/endpoint', $data);
 ```
+
+## API Endpoints
+
+Here are some example endpoints you can use with this wrapper:
+
+### GET Requests
+
+1. Channel Information:
+   ```php
+   $api->get('/channels/@delba');
+   ```
+
+2. Channel About Me:
+   ```php
+   $api->get('/channels/@delba/aboutMe');
+   ```
+
+3. Channel Stats:
+   ```php
+   $api->get('/channels/@delba/stats', [
+       'range' => '28',
+       'groupBy' => 'daily',
+       'sortOrder' => 'ASC',
+       'withRevenue' => 'true',
+       'withEvents' => 'true',
+       'withBreakdown' => 'false',
+       'withToday' => 'false'
+   ]);
+   ```
+
+4. All-time Channel Stats:
+   ```php
+   $api->get('/channels/@delba/stats', [
+       'range' => 'alltime',
+       'groupBy' => 'daily',
+       'sortOrder' => 'ASC',
+       'withRevenue' => 'true',
+       'withEvents' => 'false',
+       'withBreakdown' => 'false'
+   ]);
+   ```
+
+5. Monthly Channel Stats:
+   ```php
+   $api->get('/channels/@delba/stats', [
+       'range' => '365',
+       'groupBy' => 'monthly',
+       'sortOrder' => 'ASC',
+       'withRevenue' => 'true',
+       'withEvents' => 'true',
+       'withBreakdown' => 'false',
+       'withToday' => 'false'
+   ]);
+   ```
+
+6. Long and Short Videos:
+   ```php
+   $api->get('/channels/@delba/longsAndShorts');
+   ```
+
+7. Featured Video:
+   ```php
+   $api->get('/channels/@delba/featuredVideo');
+   ```
+
+8. Channel Averages:
+   ```php
+   $api->get('/channels/@delba/averages');
+   ```
+
+9. Channel Videos:
+   ```php
+   $api->get('/channels/@delba/videos', [
+       'orderBy' => 'uploadDate',
+       'limit' => '40',
+       'offset' => '0',
+       'withThumbnail' => 'true',
+       'type' => 'lf'
+   ]);
+   ```
+
+10. Channel Projections:
+    ```php
+    $api->get('/channels/@delba/projections/milestones');
+    ```
+
+11. Similar Channels:
+    ```php
+    $api->get('/channels/@delba/similar');
+    ```
+
+12. Popular Channels:
+    ```php
+    $api->get('/channels/popular', ['total' => '6']);
+    ```
+
+### POST Requests
+
+1. Channel Rankings:
+   ```php
+   $api->post('/rankings/channels', [
+       'interval' => 'weekly',
+       'sortBy' => 'subs',
+       'made_for_kids' => true,
+       'show_music' => true,
+       'category_id' => null,
+       'country' => null,
+       'show_movies' => true
+   ]);
+   ```
+
+2. Video Rankings:
+   ```php
+   $api->post('/rankings/videos', [
+       'interval' => 7,
+       'includeKids' => true,
+       'includeMusic' => true,
+       'country' => 'all',
+       'categoryId' => 9999,
+       'videoFormat' => 'all'
+   ]);
+   ```
 
 ## Error Handling
 
