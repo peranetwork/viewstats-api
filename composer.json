@@ -1,5 +1,5 @@
 {
-    "name": "peranetwork/viewstats-unofficial-api",
+    "name": "peranetwork/viewstats-api",
     "description": "A PHP wrapper for the ViewStats API",
     "type": "library",
     "require": {
