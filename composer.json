@@ -2,6 +2,9 @@
     "name": "peranetwork/viewstats-api",
     "description": "A PHP wrapper for the ViewStats API",
     "type": "library",
+    "version": "1.0.0",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "require": {
         "php": ">=7.4",
         "ext-curl": "*",
